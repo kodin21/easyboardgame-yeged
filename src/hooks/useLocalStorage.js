@@ -6,14 +6,14 @@ export const useLocalStorage = (keyName, initialValue) => {
     [keyName, initialValue]
   );
 
-  const [style, setStateValue] = useState(initialValue);
+  const [value, setStateValue] = useState(initialValue);
 
-  const setStyle = (style) => {
-    const styleStore = style instanceof Function ? style() : style;
-    localStorage.setItem(keyName, JSON.stringify(styleStore));
-    setStateValue(styleStore);
-    console.log("location", styleStore);
+  const setvalue = (value) => {
+    const valueStore = value instanceof Function ? value() : value;
+    localStorage.setItem(keyName, JSON.stringify(valueStore));
+    setStateValue(valueStore);
+    console.log("location", valueStore);
   };
 
-  return [style, setStyle];
+  return [value, setvalue];
 };

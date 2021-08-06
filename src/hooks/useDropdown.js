@@ -3,7 +3,7 @@ import { useLocalStorage } from "./useLocalStorage";
 
 export const useDropdown = (label, characters) => {
   const [state, setState] = useLocalStorage(
-    "characters",
+    "character",
     characters[0].src || ""
   );
 
